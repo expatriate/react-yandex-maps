@@ -50,12 +50,10 @@ class Map extends React.Component {
 
     const instance = new Map(this._parentElement, state, options);
 
-    Object.keys(_events).forEach(key =>
-      addEvent(this.state.instance, key, _events[key])
-    );
+    Object.keys(_events).forEach(key => addEvent(instance, key, _events[key]));
 
     if (typeof instanceRef === 'function') {
-      instanceRef(this.state.instance);
+      instanceRef(instance);
     }
 
     this.setState({ instance });
